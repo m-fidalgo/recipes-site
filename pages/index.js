@@ -1,34 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { RecipeService } from "../services/RecipeService";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import RecipeCard from "../components/RecipeCard/RecipeCard";
+import RecipeCategory from "../components/RecipeCategory/RecipeCategory";
 
-export default function Home() {
-  const [list, setList] = useState([]);
+export async function getStaticProps(context) {
+  const totalItems = 20;
+  const recipes = (await RecipeService.listAll()).slice(0, totalItems);
 
-  useEffect(() => {
-    async function getRecipes() {
-      const recipes = await RecipeService.listAll();
-      setList(recipes);
-    }
+  return {
+    props: {
+      recipes,
+    },
+  };
+}
 
-    getRecipes();
-  }, []);
+export default function Home({ recipes }) {
+  const categories = useMemo(() => {
+    const categoriesList = {};
+
+    recipes.forEach((recipe) => {
+      categoriesList[recipe.category] = true;
+    });
+
+    return Object.keys(categoriesList).sort();
+  }, [recipes]);
 
   return (
     <div>
       <Header title="Treinacook" />
-      {list.map((item) => (
-        <RecipeCard
-          key={item.id}
-          link={"/"}
-          category={item.category}
-          name={item.name}
-          img={item.img}
+      {categories.map((category) => (
+        <RecipeCategory
+          key={category}
+          recipeList={recipes}
+          category={category}
         />
       ))}
-
       <Footer />
     </div>
   );
