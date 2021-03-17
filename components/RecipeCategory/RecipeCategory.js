@@ -9,9 +9,9 @@ function slugifyText(text) {
 
 function createUrl(recipe) {
   const category = slugifyText(recipe.category);
-  const recipeName = slugifyText(recipe.name);
+  const recipeId = `${slugifyText(recipe.name)}-${recipe.id}`;
 
-  return `/receitas/${category}/${recipe.id}-${recipeName}`;
+  return `/receitas/${category}/${recipeId}`;
 }
 
 export default function RecipeCategory(props) {

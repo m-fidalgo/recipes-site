@@ -100,11 +100,10 @@ export default function Cadastro() {
         ></link>
       </Head>
 
-      <h1>Cadastro de Receitas</h1>
-
       <Paper
         style={{ margin: "24px auto", maxWidth: "800px", padding: "12px" }}
       >
+        <h1>Cadastro de Receitas</h1>
         <Grid container spacing={2}>
           <Grid item container justify={"center"}>
             <img width={250} src={img} />

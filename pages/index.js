@@ -1,5 +1,6 @@
-import { useState, useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { RecipeService } from "../services/RecipeService";
+import { CategoryService } from "../services/CategoryService";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import RecipeCategory from "../components/RecipeCategory/RecipeCategory";
@@ -17,13 +18,7 @@ export async function getStaticProps(context) {
 
 export default function Home({ recipes }) {
   const categories = useMemo(() => {
-    const categoriesList = {};
-
-    recipes.forEach((recipe) => {
-      categoriesList[recipe.category] = true;
-    });
-
-    return Object.keys(categoriesList).sort();
+    return CategoryService.get(recipes);
   }, [recipes]);
 
   return (
