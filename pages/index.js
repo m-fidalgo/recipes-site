@@ -23,7 +23,7 @@ export default function Home({ recipes }) {
 
   return (
     <div>
-      <Header title="Treinacook" />
+      <Header title="Receitas" />
       {categories.map((category) => (
         <RecipeCategory
           key={category}

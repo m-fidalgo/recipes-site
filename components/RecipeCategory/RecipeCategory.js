@@ -24,11 +24,13 @@ export default function RecipeCategory(props) {
     <div className="recipeCategory">
       <style jsx>{RecipeCategoryStyled}</style>
 
-      <Link href={`/receitas/${slugifyText(props.category)}`}>
-        <a>
-          <h2 className="categoryName">{props.category}</h2>
-        </a>
-      </Link>
+      <div className="titleContainer">
+        <Link href={`/receitas/${slugifyText(props.category)}`}>
+          <a>
+            <h2 className="categoryName">{props.category}</h2>
+          </a>
+        </Link>
+      </div>
 
       <div className="recipes">
         {recipes.map((recipe) => (

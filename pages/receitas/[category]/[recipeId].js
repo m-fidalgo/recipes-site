@@ -39,7 +39,7 @@ function slugifyText(text) {
 export default function RecipeContainer({ recipe }) {
   return (
     <div>
-      <Header title={`Treinacook - ${recipe.name}`} />
+      <Header title={`Receitas - ${recipe.name}`} />
       <Recipe
         name={recipe.name}
         img={recipe.img}

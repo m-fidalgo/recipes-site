@@ -2,9 +2,12 @@ import css from "styled-jsx/css";
 
 export default css`
   .header {
-    background-color: #ff6a28;
+    background-color: #fb9aa8;
     color: white;
-    padding: 8px 16px;
     text-align: center;
+    padding: 16px;
+  }
+  .header img {
+    width: 30%;
   }
 `;

@@ -4,8 +4,11 @@ export default css`
   .recipeCategory {
     padding: 8px 16px;
   }
+  .titleContainer {
+    text-align: center;
+  }
   .categoryName {
-    color: #ff6a28;
+    color: #fb9aa8;
   }
   .recipes {
     display: grid;

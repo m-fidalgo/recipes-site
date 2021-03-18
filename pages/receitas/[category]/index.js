@@ -47,7 +47,7 @@ export default function RecipeCategoryPage(props) {
 
   return (
     <div>
-      <Header title={`Treinacook - ${category}`} />
+      <Header title={`Receitas - ${category}`} />
       <RecipeCategory recipeList={recipes} category={category} />
       <Footer />
     </div>

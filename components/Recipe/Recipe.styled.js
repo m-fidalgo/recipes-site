@@ -8,12 +8,13 @@ export default css`
   }
   .recipeName {
     text-align: center;
+    color: #fb9aa8;
   }
   .recipeImg {
     width: 100%;
   }
   .recipeBody :global(h2) {
-    color: #ff6a28;
+    color: #fb9aa8;
   }
   .recipeBody :global(li) {
     padding: 4px;

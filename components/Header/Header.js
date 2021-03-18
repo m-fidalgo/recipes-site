@@ -8,15 +8,11 @@ export default function Header(props) {
       <style jsx>{HeaderStyled}</style>
       <Head>
         <title>{props.title}</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        ></link>
       </Head>
 
       <Link href="/">
         <a>
-          <img alt="Logo Treinacook" src="/img/logo.svg" />
+          <img alt="Receitas" src="/img/logo.svg" />
         </a>
       </Link>
     </header>
